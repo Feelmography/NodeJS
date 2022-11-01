@@ -12,7 +12,6 @@ import express from "express";
 import rootRouter from "../routes/root.js";
 import userRouter from "../routes/user.js";
 import cityRouter from "../routes/city.js";
-import countryRouter from "../routes/city.js";
 
 // app 모듈 생성
 const app = express();
@@ -42,7 +41,6 @@ app.use("/", rootRouter);
 // 전달하기
 app.use("/user", userRouter);
 app.use("/city", cityRouter);
-app.use("/country", countryRouter);
 
 // app.js에서 생성한 module을
 // 다른 module 에서 import 하여

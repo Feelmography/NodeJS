@@ -12,3 +12,5 @@
 ## 프로젝트 목록
 
 ### :cat: [학사정보 프로젝트] (https://github.com/Feelmography/NodeJS/tree/master/Node_06)
+
+- 학생정보, 성적정보 데이터베이스 연동 프로젝트

@@ -11,4 +11,4 @@
 
 ## 프로젝트 목록
 
-### :cat: 학사정보 프로젝트
+### :cat: [학사정보 프로젝트] (https://github.com/Feelmography/NodeJS/tree/master/Node_06)

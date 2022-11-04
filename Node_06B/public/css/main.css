@@ -57,6 +57,27 @@ footer {
   text-align: center;
   padding: 1em;
 }
+
+table {
+  border-collapse: collapse;
+  width: 95%;
+}
+
+table.student td,
+table.student th {
+  text-align: left;
+  padding: 5px 8px;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  /*
+  table의 칼럼에 표현되는 TextContent의 길이가 길어서
+  넘칠 경우 말줄임표(...)를 보이도록 하는 설정
+  */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  table-layout: fixed;
+}
+
 section.main {
   flex: 1;
   overflow: auto;

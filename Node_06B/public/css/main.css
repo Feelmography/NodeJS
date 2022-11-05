@@ -76,6 +76,7 @@ table.student th {
   white-space: nowrap;
   text-overflow: ellipsis;
   table-layout: fixed;
+  cursor: pointer;
 }
 
 section.main {

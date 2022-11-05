@@ -54,4 +54,37 @@ router.post("/insert", (req, res) => {
   });
 });
 
+router.get("/:st_num/detail", (req, res) => {
+  const st_num = req.params.st_num;
+  /**
+   * DB SQL을 코딩할 떄 매우 주의할 사항!!!
+   * 아래와 같이 문자열을 직접 코딩하여
+   * WHERE 절을 만들 경우
+   * 예를 들어 S OR 1=1 과 같은 문자열을 st_num 변수에
+   * 담아서 전달을 하면 WHERE의 조건이 무력화 되는
+   * 명령이 실행된다
+   * 만약 DELETE, UPDATE 명령을 수행할 때 이러한 코드를
+   * 작성하면 해커에 의해 DB가 바로 손상될 수 있다
+   *
+   * 이러한 해킹 공격을 DB EnJection 공격이라고 한다
+   * 매우 주의해야 한다!!!
+   */
+
+  //const sql = `SELECT * FROM tbl_student
+  //WHERE st_num = ${st_num}`;
+
+  const sql = "SELECT * FROM tbl_student WHERE st_num = ?";
+
+  mysql.execute(sql, [st_num], (err, student, field) => {
+    // res.json(student);
+    res.render("student/st_main", { body: "detail", student: student[0] });
+  });
+});
+
+/**
+ * /student/학번/update 로 Request가 되면
+ * DB에서 학생정보를 SELECT 하고
+ * st_write로 보내서 input box 에 정보를 표시하기
+ */
+
 export default router;
